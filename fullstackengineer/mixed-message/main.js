@@ -1,3 +1,9 @@
+/**
+ * Have fun with this.
+ * Nouns can be singular or plural, use articles for singular nouns.
+ * Come up with any new formats and responses to add to the list if it pleases you.
+ */
+
 const noun = 'a skyscraper, a mountain, an avalance, a paper airplane, a kaleidescope, a guitar string, bubblegum, last friday, a violin, candycanes';
 
 const adjective = 'heavy, strange, funky, happy, hairless, disrespectful, duck-like, frisky, startling';
@@ -17,38 +23,24 @@ const response = [
 ];
 
 function getRandom(list, exclude) {
-    // Get the nouns as an array. Exclude the noun if it was passed through
+    // Convert a string into an array
     if (typeof list === 'string') {
-        list = list.split(', ').filter(item => item !== exclude);
+        list = list.split(', ');
     }
 
+    // Exclude could be used to prevent a repeat
+    if(exclude) {
+        list = list.filter(item => item !== exclude);
+    }
+
+    // Return a random element from the list
     return list[Math.floor(Math.random() * list.length)]
 }
 
-const format = [
+const question = [
     `Have you ever wondered why ${getRandom(noun)} ${getRandom(sensed)} rather ${getRandom(adjective)}?`,
     `Why does ${getRandom(noun)} ${getRandom(sense)} a lot like ${getRandom(noun)}?`
 ]
 
-
-function format1() {
-    let noun1 = getRandom(noun);
-    let sense1 = getRandom(sense);
-    let noun2 = getRandom(noun, noun1);
-    
-    return `Why does ${noun1} ${sense1} a lot like ${noun2}?`;
-}
-
-
-function format2() {
-    let noun1 = getRandom(noun);
-    let sense1 = getRandom(sensed);
-    let adjective1 = getRandom(adjective);
-    
-    return `Have you ever wondered why ${noun1} ${sense1} rather ${adjective1}?`;
-}
-
-
-
-console.log(getRandom(format));
+console.log(getRandom(question));
 console.log(getRandom(response));
