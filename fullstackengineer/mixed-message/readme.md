@@ -1,6 +1,11 @@
 # Mixed Messages
 
-Asks a random, quasi-sensible question and gives a response. Perhaps an opinion.
+
+> Have you ever wondered why last friday feels rather strange?
+> 
+> ...
+> 
+> Anyway, could you pass the grey poupon?
 
 ## Table of Contents
 
@@ -10,6 +15,8 @@ Asks a random, quasi-sensible question and gives a response. Perhaps an opinion.
 - Status
 
 ## General Information
+
+Asks a random, quasi-sensible question and gives a response. Perhaps an opinion.
 
 This is a Full-Stack Engineer career path project from Codecademy.
 

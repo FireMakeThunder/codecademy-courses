@@ -18,7 +18,7 @@ const response = [
     'Oh well, gotta go!',
     'Seems odd, I think.',
     'I never think about it.',
-    'By the way, could you pass the grey poupon?',
+    'Anyway, could you pass the grey poupon?',
     "It's rather amazing, isn't it!"
 ];
 
@@ -43,4 +43,5 @@ const question = [
 ]
 
 console.log(getRandom(question));
+console.log('...');
 console.log(getRandom(response));
