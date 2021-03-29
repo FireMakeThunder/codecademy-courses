@@ -9,7 +9,7 @@ const noun = 'a skyscraper, a mountain, an avalance, a paper airplane, a kaleide
 const adjective = 'heavy, strange, funky, happy, hairless, disrespectful, duck-like, frisky, startling';
 
 const sense = 'sound, look, taste, feel, smell';
-const sensed = 'sounded, looked, tasted, smelt, felt';
+const senses = 'sounds, looks, tastes, smells, feels';
 
 const response = [
     'I think about it daily.',
@@ -38,7 +38,7 @@ function getRandom(list, exclude) {
 }
 
 const question = [
-    `Have you ever wondered why ${getRandom(noun)} ${getRandom(sensed)} rather ${getRandom(adjective)}?`,
+    `Have you ever wondered why ${getRandom(noun)} ${getRandom(senses)} rather ${getRandom(adjective)}?`,
     `Why does ${getRandom(noun)} ${getRandom(sense)} a lot like ${getRandom(noun)}?`
 ]
 
