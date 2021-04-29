@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <script src="main.js"></script>
+    <title>Mixed messages</title>
+</head>
+<body>
+    <h1>Mixed messages</h1>
+    <p id="message"></p>
+    <button onclick="newMessage()">New message</button>
+    
+    <script type="text/javascript">
+        let message = {
+            question: "",
+            response: "",
+            newMessage: function(questionExclude, messageExclude) {
+                this.question = getRandom(question, questionExclude);
+                this.response = getRandom(response, messageExclude);
+            },
+            generateHTML: function() {
+                return this.question + "<br>...<br>" + this.response;
+            }
+        }
+
+        function newMessage() {
+            message.newMessage(message.question, message.response);
+            document.getElementById("message").innerHTML = message.generateHTML();
+        }
+
+        newMessage();
+    </script>
+</body>
+</html>
