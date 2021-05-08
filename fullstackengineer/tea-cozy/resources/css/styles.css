@@ -16,6 +16,7 @@ body {
 header {
     height: 69px;
     width: 100%;
+    background-color: black;
     border-bottom: 1px solid seashell;
     padding: 0 10px;
     
@@ -45,4 +46,28 @@ nav ul li {
 nav ul li a {
     color: seashell;
     text-decoration: underline;
+}
+
+main {
+    position: relative;
+    top: 69px;
+}
+
+#mission {
+    height: 700px;
+    width: 100%;
+
+    background-image: url("/resources/images/img-mission-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+#mission h2, #mission h4 {
+    background-color: black;
+    padding: 8px 0;
 }
