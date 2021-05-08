@@ -75,10 +75,6 @@ main {
     main {
         top: 69px;
     }
-
-    #featured {
-        padding-top: 69px;
-    }
 }
 
 #mission {
@@ -103,7 +99,11 @@ main {
 #featured {
     padding-top: 102px;
 }
-
+@media only screen and (min-width: 535px) {
+    #featured {
+        padding-top: 69px;
+    }
+}
 #featured h4 {
     margin-bottom: 69px;
 }
@@ -223,3 +223,31 @@ main {
     }
 }
 
+footer {
+    position: relative;
+    top: 102px;
+}
+
+footer h2 {
+    margin: 20px 0;
+}
+
+@media only screen and (min-width: 535px) {
+    footer {
+        top: 69px;
+    }
+}
+
+footer .text {
+    height: 150px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .copyright {
+    margin-top: 15px;
+    margin-left: 20px;
+    align-self: flex-start;
+}
