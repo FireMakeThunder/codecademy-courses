@@ -1,3 +1,9 @@
+/* Breakpoints:
+    Less than 535px - When the navigation gets cut off
+    Less than 657px - When the gallery appears to have only one column of cards
+*/
+
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +20,7 @@ body {
 }
 
 header {
-    height: 69px;
+    height: 102px;
     width: 100%;
     background-color: black;
     border-bottom: 1px solid seashell;
@@ -25,9 +31,21 @@ header {
     z-index: 40;
     
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: flex-end;
 }
+
+
+@media only screen and (min-width: 535px) {
+    header {
+        height: 69px;
+        flex-flow: row nowrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+} 
+
 
 header img {
     height: 50px;
@@ -50,7 +68,7 @@ nav ul li a {
 
 main {
     position: relative;
-    top: 69px;
+    top: 102px;
 }
 
 #mission {
@@ -70,4 +88,76 @@ main {
 #mission h2, #mission h4 {
     background-color: black;
     padding: 8px 0;
+}
+
+#featured {
+    padding-top: 102px;
+}
+
+@media only screen and (min-width: 535px) {
+    main {
+        top: 69px;
+    }
+
+    #featured {
+        padding-top: 69px;
+    }
+}
+
+.gallery {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding-top: 69px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.gallery .card {
+    margin-bottom: 69px;
+}
+
+@media only screen and (min-width: 535px) {
+    .gallery {
+        justify-content: center;
+    }
+    .gallery .card {
+        width: 45%;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+}
+
+@media only screen and (min-width: 657px) {
+    .gallery .card{
+        width: 30%;
+        max-width: 300px;
+    }
+}
+
+.card .image {
+    max-height: 300px;
+    overflow: hidden;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card .image img {
+    width: 75%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+@media only screen and (min-width: 535px) {
+    .card .image img {
+        width: 100%;
+    }
+}
+
+@media only screen and (min-width: 657px) {
+    .card .image img {
+        max-width: 300px;
+        max-height: 200px;
+    }
 }
