@@ -71,6 +71,16 @@ main {
     top: 102px;
 }
 
+@media only screen and (min-width: 535px) {
+    main {
+        top: 69px;
+    }
+
+    #featured {
+        padding-top: 69px;
+    }
+}
+
 #mission {
     height: 700px;
     width: 100%;
@@ -94,27 +104,78 @@ main {
     padding-top: 102px;
 }
 
-@media only screen and (min-width: 535px) {
-    main {
-        top: 69px;
-    }
+#featured h4 {
+    margin-bottom: 69px;
+}
 
-    #featured {
-        padding-top: 69px;
+#locations {
+    background-image: url("/resources/images/img-locations-background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+
+    min-height: 500px;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+
+#locations h2 {
+    margin: 36px 0 15px;
+    width: 100%;
+}
+
+#locations div {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+@media only screen and (min-width: 657px) {
+    #locations div {
+        flex-flow: row wrap;
+        justify-content: center;
     }
 }
+
+@media only screen and (min-width: 820px) {
+    #locations div {
+        align-items: stretch;
+    }
+}
+
+
+#locations .location {
+    max-width: 300px;
+    flex-grow: 1;
+    width: 80%;
+    background-color: black;
+    margin: 20px;
+}
+
+#locations div article h3,
+#locations div article p {
+    margin: 40px 0;
+}
+
+
 
 .gallery {
     max-width: 1000px;
     margin: 0 auto;
-    padding-top: 69px;
     display: flex;
     flex-wrap: wrap;
 }
 
 .gallery .card {
+    background-color: black;
     margin-bottom: 69px;
 }
+
 
 @media only screen and (min-width: 535px) {
     .gallery {
@@ -161,3 +222,4 @@ main {
         max-height: 200px;
     }
 }
+
