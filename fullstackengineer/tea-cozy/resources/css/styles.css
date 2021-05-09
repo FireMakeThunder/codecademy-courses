@@ -81,7 +81,7 @@ main {
     height: 700px;
     width: 100%;
 
-    background-image: url("/resources/images/img-mission-background.jpg");
+    background-image: url("../../resources/images/img-mission-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
@@ -109,7 +109,7 @@ main {
 }
 
 #locations {
-    background-image: url("/resources/images/img-locations-background.jpg");
+    background-image: url("../../resources/images/img-locations-background.jpg");
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
