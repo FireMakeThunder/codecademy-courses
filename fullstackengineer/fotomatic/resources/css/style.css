@@ -46,7 +46,8 @@ header {
 header .content {
   display: flex;
   align-items: center;
-  padding: 1.875rem;
+  height: 4.25rem;
+  padding: 0 1.875rem;
 }
 
 header .logo {
@@ -55,6 +56,7 @@ header .logo {
 
 header nav ul {
   display: flex;
+  align-items: center;
 }
 
 nav li {
@@ -62,23 +64,41 @@ nav li {
 }
 
 nav a {
-  vertical-align: bottom;
   line-height: 1.6;
   font-size: 1rem;
   color: #4a4a4a;
 }
 
 header .icon {
+  vertical-align: middle;
   width: 1rem;
   padding-left: .75rem;
 }
 
+header .button {
+  padding: .1875rem .5rem;
+  background-color: #9dc20b;
+  line-height: 1.6;
+}
+
+header .tablet,
 header .mobile {
   display: none;
 }
 
 @media only screen and (max-width: 760px) {
-  header .desktop {
+   header .tablet {
+    display: inline-block;
+  }
+
+  nav li {
+    padding-left: 1.5rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  header .desktop,
+  header .tablet {
     display: none;
   }
 
@@ -88,7 +108,8 @@ header .mobile {
   }
 
   header .content {
-    padding: .5rem 0;
+    height: 3rem;
+    padding: 0;
   }
 
   header .mobile ul {
@@ -102,12 +123,10 @@ header .mobile {
     padding: 0;
   }
 
-  header .mobile .button {
-    padding: .1875rem .5rem;
-    background-color: #9dc20b;
-    line-height: 1.6;
-    color: white;
+  header .mobile li img {
+    vertical-align: middle;
   }
+
 }
 
 /* Sign Up Section */
