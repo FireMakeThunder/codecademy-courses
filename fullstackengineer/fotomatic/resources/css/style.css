@@ -360,9 +360,23 @@ header .mobile {
 #filters-section .images-container {
   max-width: 100%;
   padding: 0 1%;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+#filters-section .image-container {
+  max-width: 25%;
+  max-height: 25%;
+}
+
+#filters-section .image-container img {
+  width: 100%;
+  height: auto;
 }
 
 @media only screen and (max-width: 760px) {
+  
   #filters-section {
     padding: 1.5rem 0 0 0;
   }
@@ -382,9 +396,16 @@ header .mobile {
     font-size: .875rem;
     line-height: 1.4;
   }
-
+  
   #filters-section .images-container {
     padding: 0;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #filters-section .image-container {
+    max-width: 33.3%;
+    max-height: 33.3%;
   }
 
   #filters-section .extra {
