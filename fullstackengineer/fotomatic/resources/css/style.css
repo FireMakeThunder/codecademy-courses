@@ -345,6 +345,7 @@ header .mobile {
 }
 
 #filters-section .content h2 {
+  padding-bottom: .625rem;
   font-size: 2.25rem;
   font-weight: bold;
   color: white;
@@ -385,13 +386,6 @@ header .mobile {
     margin-bottom: 1rem;
   }
 
-  #filters-section .content h2 {
-    padding-bottom: .625rem;
-    font-size: 1.125rem;
-    line-height: 1.3;
-    font-weight: normal;
-  }
-
   #filters-section .content h3 {
     font-size: .875rem;
     line-height: 1.4;
@@ -403,6 +397,11 @@ header .mobile {
 }
 
 @media only screen and (max-width: 450px) {
+  #filters-section .content h2 {
+    font-size: 1.125rem;
+    line-height: 1.3;
+    font-weight: normal;
+  }
   #filters-section .image-container {
     max-width: 33.3%;
     max-height: 33.3%;
@@ -419,11 +418,11 @@ header .mobile {
   background-color: #f3f3f3;
 }
 
-#quotes-section content {
+#quotes-section .content {
   padding: 5rem 0;
 }
 
-#quotes-section quote {
+#quotes-section .quote {
   padding-right: 1.875rem;
   font-family: "Palatino", serif;
   font-size: 1.875rem;
@@ -432,24 +431,38 @@ header .mobile {
   color: #4a4a4a;
 }
 
-#quotes-section quote-citation {
+#quotes-section .quote-citation {
   height: 1.875rem;
+  vertical-align: bottom;
 }
 
 @media only screen and (max-width: 760px) {
-  #quotes-section content {
-    padding: 1.875rem .625rem;
+  #quotes-section .content {
+    display: flex;
+    padding: 1.875rem 1.5rem;
   }
 
-  #quotes-section quote {
+  #quotes-section .quote {
+    text-align: left;
     font-size: 1.5rem;
     line-height: 1.4;
   }
 
-  #quotes-section quote-citation {
+  #quotes-section .quote-citation {
     display: block;
-    padding-top: 1rem;
+    padding-top: 0.5rem;
     margin: auto;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  #quotes-section .content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #quotes-section .quote {
+    text-align: center;
   }
 }
 
