@@ -3,20 +3,21 @@
 <html>
   <head>
     <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link href="styles.css" rel="stylesheet">
+    <link href="resources/css/styles.css" rel="stylesheet">
   </head>
 
   <body>
     <header>
-      <img class="logo" alt="In-Flight">
-      <div class="company-name">        
-      </div>
+      <div class="company-name">In Flight</div>
+      <img class="logo" src="resources/images/logo.png" alt="In-Flight">
     </header>
 
     <main>
       <section id="statement">
-        <h1>A Great Flight Takes Perfect Wings</h1>
-        <p>Fourty years of joined experience is proven exceptional because of our unique engineering. We've built each wing on your plane to outperform the standard and lift your peace and joy, through every flight, to new heights.</p>
+        <div class="overlay">
+          <h1>A Great Flight Takes Perfect Wings</h1>
+          <p>We build each wing on your planes to outperform the standard and lift your peace and joy, with every flight, to new heights.</p>
+        </div>
       </section>
 
       <section id="products">
@@ -24,24 +25,24 @@
         
         <div class="gallery">
           <!-- Put different airplanes here -->
-          <article>
-            <h3>Airplane company</h3>
+          <article class="item">
+            <h3>Air India</h3>
             <div class="image-wrap">
-              <img src="" alt="">
+              <img src="resources/images/arnold-antoo-dvqFGckKF1Y-unsplash_adjusted.jpg" alt="Air India">
             </div>
           </article>
           
-          <article>
-            <h3>Airplane company</h3>
+          <article class="item">
+            <h3>Embraer</h3>
             <div class="image-wrap">
-              <img src="" alt="">
+              <img src="resources/images/chris-barbalis-oPX46gENIjM-unsplash_adjusted.jpg" alt="Embraer">
             </div>
           </article>
           
-          <article>
-            <h3>Airplane company</h3>
+          <article class="item">
+            <h3>Airbus</h3>
             <div class="image-wrap">
-              <img src="" alt="">
+              <img src="resources/images/chad-peltola-Rch8oP-O5sU-unsplash_adjusted.jpg" alt="Airbus">
             </div>
           </article>
         </div>
@@ -49,35 +50,60 @@
 
       <section id="team">
         <h2>Meet the Minds</h2>
+        <p>Four decades of in-depth experience has proven our unique, industry leading technology requires talented engineers. We love working together and we love making your wings.</p>
         <div class="gallery">
-          <article class="teammate">
-            <h3>NAME</h3>
-            <img src="" alt="">
-          </article>
+          <div class="row">
+            <article class="item">
+              <h3>NAME</h3>
+              <div class="image-wrap">
+                <img src="resources/images/team/christina-wocintechchat-com-Zpzf7TLj_gA-unsplash_adjusted.jpg" alt="">
+              </div>
+            </article>
           
-          <article class="teammate">
-            <h3>NAME</h3>
-            <img src="" alt="">
-          </article>
-          
-          <article class="teammate">
-            <h3>NAME</h3>
-            <img src="" alt="">
-          </article>
-          
-          <article class="teammate">
-            <h3>NAME</h3>
-            <img src="" alt="">
-          </article>
-          
-          <article class="teammate">
-            <h3>NAME</h3>
-            <img src="" alt="">
-          </article>
+            <article class="item">
+              <h3>NAME</h3>
+              <div class="image-wrap">
+                <img src="resources/images/team/jonas-kakaroto-KIPqvvTOC1s-unsplash_adjusted.jpg" alt="">
+              </div>
+            </article>
+            
+            <article class="item">
+              <h3>NAME</h3>
+              <div class="image-wrap">
+                <img src="resources/images/team/thisisengineering-raeng-cdSKgXv2Vz4-unsplash_adjusted.jpg" alt="">
+              </div>
+            </article>
+          </div>
+
+          <div class="row">
+            <article class="item">
+              <h3>NAME</h3>
+              <div class="image-wrap">
+                <img src="resources/images/team/thisisengineering-raeng-DKPh3G8HLRU-unsplash_adjusted.jpg" alt="">
+              </div>
+            </article>
+            
+            <article class="item">
+              <h3>NAME</h3>
+              <div class="image-wrap">
+                <img src="resources/images/team/thisisengineering-raeng-vGA1ei1yxos-unsplash_adjusted.jpg" alt="">
+              </div>
+            </article>
+            
+            <article class="item">
+              <h3>NAME</h3>
+              <div class="image-wrap">
+                <img src="resources/images/team/thisisengineering-raeng-Vp9r8XUSmZI-unsplash_adjusted.jpg" alt="">
+              </div>
+            </article>
+          </div>
         </div>
       </section>
     </main>
 
+    <footer>
+      <p class="disclaimer">This is a fictional team and company and is not intended to reference any specific company or person, in the past, present or future.</p>
+    </footer>
     
   </body>
 </html>
