@@ -157,6 +157,12 @@ h1 {
     align-items: center;
 }
 
+#team p {
+    width: 80%;
+    max-width: 500px;
+    margin-bottom: 2rem;
+}
+
 @media only screen and (min-width: 450px) {
     #team .gallery {
        /* width: 70%;*/
@@ -182,7 +188,7 @@ h1 {
     width: 47%;
 }
 
-@media only screen and (min-width: 672px) {
+@media only screen and (min-width: 672px) {    
     .gallery .three-rows {
         display: none !important;
     }
@@ -191,9 +197,10 @@ h1 {
         display: flex !important;
     }
     
-#team .gallery .item {
-    width: 30%;
-}
+    #team .gallery .item {
+        width: 30%;
+        max-width: 200px;
+    }
 }
 
 #team .gallery .image-wrap {
