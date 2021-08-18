@@ -8,11 +8,15 @@ export default class Track extends React.Component {
     }
 
     render() {
+        const name = this.props.name;
+        const artist = this.props.artist;
+        const album = this.props.album;
+
         return (
             <div className="Track">
                 <div className="Track-information">
-                    <h3>{/*<!-- track name will go here -->*/}</h3>
-                    <p>{/*<!-- track artist will go here-->*/} | {/*<!-- track album will go here -->*/}</p>
+                    <h3>{name}</h3>
+                    <p>{artist} | {album}</p>
                 </div>
                 <button className="Track-action">{this.renderAction()}</button>
             </div>
