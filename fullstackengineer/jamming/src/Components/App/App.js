@@ -12,13 +12,15 @@ class App extends React.Component {
 
      this.state = {
         searchResults: [
-          { name: "Bogus", artist: "Lip Singers", album: "Plushy Slippers and Breakfast" },
-          { name: "Fantasy 4degrees", artist: "Jbx", album: "TrrT Flip" }
+          { id: '1', name: "Bogus", artist: "Lip Singers", album: "Plushy Slippers and Breakfast" },
+          { id: '2', name: "Fantasy 4degrees", artist: "Jbx", album: "TrrT Flip" }
         ],
 
         playlistName: 'Fegue review',
-        playlistTracks: [{ name: "Total Bachnilation", artist: "Nacht Bacht", album: "An Ill-Mannered Cavalier "}]
+        playlistTracks: [{ id: '3', name: "Total Bachnilation", artist: "Nacht Bacht", album: "An Ill-Mannered Cavalier "}]
      }
+
+     this.addTrack = this.addTrack.bind(this);
   }
 
   render() {
@@ -26,15 +28,45 @@ class App extends React.Component {
       <div>
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
+          
           <SearchBar />
+
           <div className="App-playlist">
-            <SearchResults searchResults={this.state.searchResults} />
-            <Playlist name={this.state.playlistName} tracks={this.state.playlistTracks} />
+
+            <SearchResults
+              searchResults={this.state.searchResults}
+              onAdd={this.addTrack}
+            />
+
+            <Playlist
+              name={this.state.playlistName}
+              tracks={this.state.playlistTracks}
+            />
+
           </div>
+          
         </div>
 
       </div>
     );
+  }
+
+  addTrack(track) {
+    const playlistTracks = this.state.playlistTracks.slice();
+
+    // Use the track’s id property to check if the current song is in the playlistTracks state.
+    for (let playlistTrack of playlistTracks) {
+      if (playlistTrack.id === track.id)
+        return;
+    }
+
+    // If the id is new, add the song to the end of the playlist.
+    playlistTracks.push(track);
+
+    // Set the new state of the playlist
+    this.setState({
+      playlistTracks
+    });
   }
 
 }
