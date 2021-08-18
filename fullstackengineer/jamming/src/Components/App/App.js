@@ -14,7 +14,10 @@ class App extends React.Component {
         searchResults: [
           { name: "Bogus", artist: "Lip Singers", album: "Plushy Slippers and Breakfast" },
           { name: "Fantasy 4degrees", artist: "Jbx", album: "TrrT Flip" }
-        ]
+        ],
+
+        playlistName: 'Fegue review',
+        playlistTracks: [{ name: "Total Bachnilation", artist: "Nacht Bacht", album: "An Ill-Mannered Cavalier "}]
      }
   }
 
@@ -26,7 +29,7 @@ class App extends React.Component {
           <SearchBar />
           <div className="App-playlist">
             <SearchResults searchResults={this.state.searchResults} />
-            <Playlist />
+            <Playlist name={this.state.playlistName} tracks={this.state.playlistTracks} />
           </div>
         </div>
 
