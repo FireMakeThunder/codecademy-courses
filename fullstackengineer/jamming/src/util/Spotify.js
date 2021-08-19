@@ -10,14 +10,14 @@ const Spotify = {
         }
 
         
-        // Set the access token value
-        accessToken = window.location.href.match(/access_token=([^&]*)/);
-        // Set a variable for expiration time
-        let expiresIn = window.location.href.match(/expires_in=([^&]*)/);
+        const accessTokenMatch = window.location.href.match(/access_token=([^&]*)/);
+        const expiresInMatch = window.location.href.match(/expires_in=([^&]*)/);
 
-        if(accessToken && expiresIn) {
-            accessToken = accessToken.pop();
-            expiresIn = expiresIn.pop();
+        if(accessTokenMatch && expiresInMatch) {
+            // Set the access token value
+            accessToken = accessTokenMatch.pop();
+            // Set a variable for expiration time
+            let expiresIn = expiresInMatch.pop();
 
             // Clear access token when it expires
             window.setTimeout(() => {
@@ -38,6 +38,35 @@ const Spotify = {
 
         window.location = spotifyAuthorizeURI;
 
+    },
+
+    search(term) {
+        return fetch(
+            `https://api.spotify.com/v1/search?type=track&q=${term}`,
+            {
+                headers: {
+                    'Authorization': 'Bearer ' + this.getAccessToken()
+                }
+            }
+        ).then( response => {
+            return response.json();
+        }).then( jsonResponse => {
+            if(!jsonResponse.tracks) {
+                return [];
+            }
+            
+            const tracks = jsonResponse.tracks.items.map(track => {
+                return {
+                    id: track.id,
+                    name: track.name,
+                    artist: track.artists[0].name,
+                    album: track.album.name,
+                    url: track.uri
+                };
+            });
+
+            return tracks;
+        })
     }
 }
 

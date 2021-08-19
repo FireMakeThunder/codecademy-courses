@@ -60,10 +60,6 @@ class App extends React.Component {
     );
   }
 
-  componentDidMount() {
-    console.log(Spotify.getAccessToken());
-  }
-
   addTrack(track) {
     const playlistTracks = this.state.playlistTracks.slice();
 
@@ -105,7 +101,8 @@ class App extends React.Component {
   }
 
   search(term) {
-    console.log(term);
+    const searchResults = Spotify.search(term);
+    this.setState({searchResults});
   }
 
 }
