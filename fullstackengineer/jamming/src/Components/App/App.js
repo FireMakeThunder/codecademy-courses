@@ -13,13 +13,10 @@ class App extends React.Component {
     super(props);
 
      this.state = {
-        searchResults: [
-          { id: '1', name: "Bogus", artist: "Lip Singers", album: "Plushy Slippers and Breakfast" },
-          { id: '2', name: "Fantasy 4degrees", artist: "Jbx", album: "TrrT Flip" }
-        ],
+        searchResults: [],
 
-        playlistName: 'Fegue review',
-        playlistTracks: [{ id: '3', name: "Total Bachnilation", artist: "Nacht Bacht", album: "An Ill-Mannered Cavalier "}]
+        playlistName: 'New Playlist',
+        playlistTracks: []
      }
 
      this.addTrack = this.addTrack.bind(this);
@@ -35,7 +32,7 @@ class App extends React.Component {
         <h1>Ja<span className="highlight">mmm</span>ing</h1>
         <div className="App">
           
-          <SearchBar onSearch={this.search} />
+          <SearchBar onSearch={this.search} userID={this.state.userID} />
 
           <div className="App-playlist">
 
@@ -60,6 +57,12 @@ class App extends React.Component {
     );
   }
 
+  componentDidMount() {
+    Spotify.getUserID().then(userID => {
+      this.setState({userID});
+    })
+  }
+
   addTrack(track) {
     const playlistTracks = this.state.playlistTracks.slice();
 
@@ -73,9 +76,7 @@ class App extends React.Component {
     playlistTracks.push(track);
 
     // Set the new state of the playlist
-    this.setState({
-      playlistTracks
-    });
+    this.setState({playlistTracks});
   }
 
   removeTrack(track) {
@@ -83,26 +84,29 @@ class App extends React.Component {
     const playlistTracks = this.state.playlistTracks.filter( playlistTrack => playlistTrack.id !== track.id);
   
     // Sets the new state of the playlist
-    this.setState({
-      playlistTracks
-    });
+    this.setState({playlistTracks});
   }
 
   updatePlaylistName (newName) {
-    this.setState({
-      playlistName: newName
-    });
+    this.setState({playlistName: newName});
   }
 
   savePlaylist() {
-    const trackURIs = this.state.playlistTracks.map(track => track.uri);
+    Spotify.savePlaylist(
+      this.state.playlistName,
+      this.state.playlistTracks.map(track => track.uri)
+    );
 
-    this.SOMEMETHOD(trackURIs, this.state.playlistName);
+    this.setState({
+      playlistName: 'New Playlist',
+      playlistTracks: []
+    })
   }
 
   search(term) {
-    const searchResults = Spotify.search(term);
-    this.setState({searchResults});
+    Spotify.search(term).then(searchResults => {
+      this.setState({searchResults});
+    });
   }
 
 }

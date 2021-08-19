@@ -17,12 +17,14 @@ export default class SearchBar extends React.Component {
     render() {
         return (
             <div className="SearchBar">
+                <h2>Hey, {this.props.userID || 'guest'}!</h2>
+                <br />
                 <input
                     placeholder="Enter a song, album or artist"
                     onChange={this.handleTermChange} />
                 <button
                     className="SearchButton"
-                    /* onClick={this.search} */>SEARCH</button>
+                    onClick={this.search}>SEARCH</button>
             </div>
         );
     }

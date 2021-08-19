@@ -15,7 +15,7 @@ export default class Playlist extends React.Component {
         return (
             <div className="Playlist">
                 <input
-                    defaultValue={this.props.name || 'New Playlist' }
+                    defaultValue={this.props.name}
                     onChange={this.handleNameChange}
                 />
 
