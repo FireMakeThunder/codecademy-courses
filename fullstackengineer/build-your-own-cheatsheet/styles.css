@@ -1,0 +1,60 @@
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+table {
+    width: 900px;
+    margin: 0px auto;
+    border: 3px solid black;
+}
+
+td, th {
+    border: 1px solid gray;
+    padding: 4px;
+}
+
+th {
+    background-color: cyan;
+}
+
+tr td:nth-child(1), tr td:nth-child(3) {
+    background-color: lightgreen;
+}
+
+/* Tag column */
+tr td:nth-child(1) {
+    text-align: center;
+    font-weight: bold;
+    width: 100px;
+}
+
+/* Description column */
+tr td:nth-child(2) {
+    background-color: lightcyan;
+    vertical-align: top;
+}
+
+/* Attributes column */
+tr td:nth-child(3) {
+    width: 400px;
+}
+
+/* Would like to learn how to not repeat myself and stylize children of a selector differently */
+tr td:nth-child(3) ul{
+    margin: 0px;
+    padding: 0px 20px;
+}
+
+/* Make to appear as code */
+tr td:nth-child(1)::first-line, /* Tag column */
+ span.code, /* Code class */
+ tr td:nth-child(3) b /* bolded attribute, would like to learn if I can affect all text before the first colon */
+{
+    font-family: 'Courier New', Courier, monospace;
+    background-color: lightgoldenrodyellow;
+}
+
+h2 {
+    color: darkgreen;
+    text-align: center;
+}

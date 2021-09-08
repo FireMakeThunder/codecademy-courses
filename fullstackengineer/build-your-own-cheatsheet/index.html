@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>HTML Media Tags | Cheat sheet</title>
+    <link href="styles.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th><h2>Tag</h2></th>
+                <th><h2>Description</h2></th>
+                <th><h2>Attributes</h2></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>&lt;img&gt;</td>
+                <td>Displays an image.</td>
+                <td>
+                    <ul>
+                        <li><b>src</b>: URL reference to the resource.</li>
+                        <li><b>alt</b>: Defines an alternative text description of the image.</li>
+                        <li><b>width</b>: Rendering width of the image in pixels. Must be an integer without a unit.</li>
+                        <li><b>height</b>: Rendering height of the image in pixels. Must be an integer without a unit.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;Picture&gt;</td>
+                <td>HTML5 element used to provide multiple image sources for rendering depending on the display/device scenario. See <span class="code">&lt;source&gt;</span> as a related tag.</td>
+                <td>
+                    <ul>
+                        <li><i>This element includes only global attributes.</i></li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;video&gt;</td>
+                <td>HTML5 element used to render a video onto the document See <span class="code">&lt;source&gt;</span> as a related tag.</td>
+                <td>
+                    <ul>
+                        <li><b>src</b>: URL reference to the resource. You may also use &lt;source&gt; instead.</li>
+                        <li><b>controls</b>: A boolean value to display controls for this element.</li>
+                        <li><b>autoplay</b>: A boolean element to autoplay when rendered.</li>
+                        <li><b>loop</b>: A boolean element to loop playback.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;audio&gt;</td>
+                <td>HTML5 element used to include an audio file into the document. This is not a self-closing tag. See &lt;source&gt; as a related tag.</td>
+                <td>
+                    <ul>
+                        <li><b>src</b>: URL reference to the resource. You may also use &lt;source&gt; instead.</li>
+                        <li><b>controls</b>: A boolean value to display controls for this element.</li>
+                        <li><b>autoplay</b>: A boolean element to autoplay when rendered.</li>
+                        <li><b>loop</b>: A boolean element to loop playback.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;source&gt;</td>
+                <td>HTML5 element used to specify one or more resources within <span class="code">&lt;video&gt;</span>, <span class="code">&lt;audio&gt;</span> <span class="code">&lt;picture&gt;</span>. Using more than one source allows the browser to select the most appropriate resource for rendering, since a provided source may not be supported by the user's browser.</td>
+                <td>
+                    <ul>
+                        <li><b>src</b>: URL reference to the resource.</li>
+                        <li><b>type</b>: MIME type of the resource.</li>
+                    </ul>
+                </td>
+            </tr>
+            <tr>
+                <td>&lt;embed&gt;</td>
+                <td>This deprecated element can be used to display videos and images. It is a self closing tag.</td>
+                <td>
+                    <ul>
+                        <li><b>src</b>: The URL to the resource you're embedding.</li>
+                        <li><b>type</b>: This is the MIME of the source.</li>
+                        <li><b>width</b>: Width of the resource in pixels (percentages are not allowed).</li>
+                        <li><b>height</b>: Height of the resource in pixels (percentages are not allowed).</li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
